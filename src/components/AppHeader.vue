@@ -1,0 +1,13 @@
+<script>
+export default {
+    
+}
+</script>
+<template>
+    <div>
+        <h1>Ciao</h1>
+    </div>
+</template>
+<style lang="scss" scoped>
+    @use '../styles/partials/variables'
+</style>
