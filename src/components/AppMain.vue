@@ -5,6 +5,14 @@ export default {
         return {
             cards
         }
+    },
+
+    emits: ['filter'],
+
+    methods: {
+        sendArche (){
+            this.$emit('filter')
+        }
     }
 }
 </script>
@@ -13,11 +21,11 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <select class="form-select my-4">
-                        <option selected>Alien</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select v-model="cards.archeStatus" class="form-select my-4" @change="sendArche()">
+                        <option selected class="text-danger">Chose archetype</option>
+                        <option v-for="arche in cards.archeArray" :value="arche">
+                            {{ arche }}
+                        </option>
                     </select>
                 </div>
             </div>
